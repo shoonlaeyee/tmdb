@@ -1,0 +1,147 @@
+// Import all of Bootstrap's CSS
+@import "bootstrap/scss/bootstrap";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
+$mobile-width: 600px;
+$tablet-width: 768px;
+$laptop-width: 992px;
+$desktop-width: 1024px;
+
+#root {
+  height: 100%; 
+}
+
+body {
+  height: 100vh;
+  background-color: #141414;
+  color: #f0f0f0
+}
+
+.text-indigo {
+  color: #464EB8
+}
+
+.bg-indigo {
+  background-color: #464EB8
+}
+
+.logo-text {
+  background: linear-gradient(to bottom right, #464EB8, #7B83EB);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent
+}
+
+.form-control::-webkit-input-placeholder {
+  color: #444444;
+}
+
+.grid-container {
+  display: grid;
+  gap: 12px;
+  grid-auto-columns: auto;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  @media screen and (min-width: $tablet-width) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (min-width: $laptop-width) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media screen and (min-width: $desktop-width) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.grid-item {
+  transition: all 200ms;
+  overflow: hidden;
+  background: #7B83EB;
+  left: 1px;
+  right: 1px;
+  min-height: 100px;
+  min-width: 100px;
+}
+
+.grid-item:hover {
+  opacity: 0.7;
+  padding: 1px;
+}
+
+.grid-item:active {
+  padding: 4px;
+}
+
+.grid-item .grid-item-detail {
+  visibility: hidden;
+  transition: 400ms;
+  background-color: #00000088;
+  bottom: -100px;
+  color: white;
+  font-size: 14px;
+}
+
+.grid-item:hover .grid-item-detail {
+  visibility: visible;
+  bottom: 1px;
+}
+
+.grid-item .grid-item-detail .title {
+  text-shadow: 0px 0px 6px black;
+  background-color: #00000022;
+  line-height: 1.1em;
+  border-top: 1px solid #141414;
+}
+
+.grid-item .grid-item-detail .desc {
+  font-size: 12px;
+  line-height: 1.1em;
+}
+
+.detail-backdrop {
+  background-color: #20000088;
+}
+
+.crews-grid {
+  display: grid;
+  gap: 12px;
+  grid-auto-columns: auto;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.show.grid-twocolumns-container  {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.popular-movies-container {
+  display: flex !important;
+  overflow-x: auto;
+}
+
+.popular-movies-container .grid-item {
+  min-width: 150px;
+  @media screen and (min-width: $laptop-width) {
+    min-width: 200px;
+  }
+  @media screen and (min-width: $desktop-width) {
+    min-width: 200px;
+  }
+}
+
+.popular-movies-bg {
+  background-color: #464EB822;
+}
+
+.search-input-container {
+  background-color: #252929;
+}
+
+.search-input-container > input {
+  padding-left: 32px;
+}
+
+.search-input-container > input::placeholder {
+  color: #777777;
+}
